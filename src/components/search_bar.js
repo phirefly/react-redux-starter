@@ -5,11 +5,16 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { term: '' }
+    this.state = { searchInput: '' } //This is the only time we set state like this. We usually use setState
   }
 
   render() { //method definition in ES6
-    return <input onChange={event => console.log(event.target.value)} />;
+    return (
+      <div>
+      <input onChange={event => this.setState({ searchInput: event.target.value })} />
+      <br/>Value of the input: { this.state.searchInput }
+      </div>
+    )
   }
 
 }
