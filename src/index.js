@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 // Create a new component to produce some html
 const App = () => {   // const means that this is the final value. Here we are making a component.
+                      // General rule: one component per file
   return <div>Hello!</div>; // This is JSX, which gets transpiled to javascript.
                             // Test here: http://babeljs.io/repl
 }
