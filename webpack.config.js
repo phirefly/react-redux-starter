@@ -2,6 +2,9 @@ module.exports = {
   entry: [
     './src/index.js'
   ],
+  node: { // https://github.com/webpack-contrib/css-loader/issues/447
+    fs: 'empty'
+  },
   output: {
     path: __dirname,
     publicPath: '/',
