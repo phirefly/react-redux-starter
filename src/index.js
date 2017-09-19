@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar'
 import YTSearch from 'youtube-api-search'
 import Dotenv from 'dotenv'
+import VideoList from './components/video_list'
 require('dotenv').config()
 
 //Make a test request
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <div>
        <SearchBar />
+       <VideoList videos={this.state.videos} /> //pass prop 'videos' to VideoList
       </div>
       );
       // This is JSX, which gets transpiled to javascript.
