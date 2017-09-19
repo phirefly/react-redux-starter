@@ -4,7 +4,6 @@ import SearchBar from './components/search_bar'
 import YTSearch from 'youtube-api-search'
 import Dotenv from 'dotenv'
 require('dotenv').config()
-console.log("****", process.env)
 
 //Make a test request
 
