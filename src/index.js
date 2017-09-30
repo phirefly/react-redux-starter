@@ -12,19 +12,26 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {videos: []}
+    this.state = {
+      videos: [],
+      selectedVideo: null
+    };
 
     YTSearch({key: process.env.API_KEY, term: 'mega ramp'}, (videos) => {
-      this.setState({ videos })
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      })
+
       console.log(this.state);
     });
   }
 
-  render() {
+  render() { //render is invoked every time the state is updated
     return (
       <div>
        <SearchBar />
-       <VideoDetail video={this.state.videos[0]} />
+       <VideoDetail video={this.state.selectedVideo} />
        <VideoList videos={this.state.videos} />
       </div>
       );
