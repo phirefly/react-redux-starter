@@ -6,8 +6,6 @@ import Dotenv from 'dotenv'
 import VideoList from './components/video_list'
 require('dotenv').config()
 
-//Make a test request
-
 // Create a new component to produce some html
 class App extends Component {
   constructor(props) {
@@ -25,7 +23,7 @@ class App extends Component {
     return (
       <div>
        <SearchBar />
-       <VideoList videos={this.state.videos} /> //pass prop 'videos' to VideoList
+       <VideoList videos={this.state.videos} />
       </div>
       );
       // This is JSX, which gets transpiled to javascript.

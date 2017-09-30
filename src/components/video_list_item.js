@@ -1,4 +1,4 @@
-import Reach from 'react';
+import React from 'react';
 
 const VideoListItem = (props) => {
   return <li>Video</li>
