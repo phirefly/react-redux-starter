@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import SearchBar from './components/search_bar'
-import YTSearch from 'youtube-api-search'
-import Dotenv from 'dotenv'
-import VideoList from './components/video_list'
+import SearchBar from './components/search_bar';
+import YTSearch from 'youtube-api-search';
+import Dotenv from 'dotenv';
+import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
-require('dotenv').config()
+require('dotenv').config();
 
 // Create a new component to produce some html
 class App extends Component {
