@@ -11,7 +11,7 @@ class SearchBar extends Component {
   render() { //method definition in ES6
     //Add 'value' to make it a controlled component: controlled by the state -- more declarative syntax
     return (
-      <div>
+      <div className="search-bar">
       <input
         value={this.state.searchInput}
         onChange={event => this.setState({ searchInput: event.target.value })} />
