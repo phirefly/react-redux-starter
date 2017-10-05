@@ -14,23 +14,24 @@ class App extends Component {
 
     this.state = {
       videos: [],
-      selectedVideo: null
+      selectedVideo: null,
+      searchTerm: null
     };
 
-    YTSearch({key: process.env.API_KEY, term: 'mega ramp'}, (videos) => {
+    YTSearch({key: process.env.API_KEY, term: this.state.searchTerm}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       })
 
-      console.log(this.state);
+      // console.log(this.state);
     });
   }
 
   render() { //render is invoked every time the state is updated
     return (
       <div>
-       <SearchBar />
+       <SearchBar onSearchEntered={() => console.log("*** Searching for...", this.state.searchTerm) } />
        <VideoDetail video={this.state.selectedVideo} />
        <VideoList onVideoSelected={selectedVideo => this.setState({selectedVideo})}
                   videos={this.state.videos} />
