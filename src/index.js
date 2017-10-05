@@ -18,12 +18,16 @@ class App extends Component {
       searchTerm: null
     };
 
-    YTSearch({key: process.env.API_KEY, term: this.state.searchTerm}, (videos) => {
+    this.videoSearch("mega ramp"); //Default search
+
+  }
+
+  videoSearch(searchTerm) {
+    YTSearch({key: process.env.API_KEY, term: searchTerm}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       })
-
       // console.log(this.state);
     });
   }
@@ -31,7 +35,7 @@ class App extends Component {
   render() { //render is invoked every time the state is updated
     return (
       <div>
-       <SearchBar onSearchEntered={() => console.log("*** Searching for...", this.state.searchTerm) } />
+       <SearchBar onSearchEntered={term => this.videoSearch(term) } />
        <VideoDetail video={this.state.selectedVideo} />
        <VideoList onVideoSelected={selectedVideo => this.setState({selectedVideo})}
                   videos={this.state.videos} />
